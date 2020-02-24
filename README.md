@@ -1,6 +1,6 @@
 ### 项目功能设计
 
-[!Alt text](https://github.com/liqi2695/YouXi_App/blob/master/ScreenShots/%E5%9B%BE%E7%89%871.png)
+![Alt text](https://github.com/liqi2695/YouXi_App/blob/master/ScreenShots/%E5%9B%BE%E7%89%871.png)
 
 
 ### 技术整体结构
