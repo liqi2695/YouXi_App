@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加管理员</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+            <div class="weadmin-body">
+                    <form class="layui-form" action="add.php">
+                      <div class="layui-form-item">
+                          <label for="username" class="layui-form-label">
+                              <span class="we-red">*</span>用户名
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="username" name="username" required="" lay-verify="required"
+                              autocomplete="off" class="layui-input" placeholder="请输入您的用户名">
+                          </div>
+                          <div class="layui-form-mid layui-word-aux">
+                              <span class="we-red">*</span>开头不能为数字，至少为5个字符
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="phone" class="layui-form-label">
+                              <span class="we-red">*</span>手机
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="phone" name="phone" required="" lay-verify="phone"
+                              autocomplete="off" class="layui-input" placeholder="请输入您的手机号码">
+                          </div>
+                          <div class="layui-form-mid layui-word-aux">
+                              <span class="we-red">*</span>输入的手机号码要能联系
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="L_email" class="layui-form-label">
+                              <span class="we-red">*</span>邮箱
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="L_email" name="email" required="" lay-verify="email"
+                              autocomplete="off" class="layui-input" placeholder="请输入您的邮箱账号">
+                          </div>
+                          <div class="layui-form-mid layui-word-aux">
+                              <span class="we-red">*</span>格式要正确。例：1463713003@qq.com
+                          </div>
+                      </div>
+                        <div class="layui-form-item">
+                                <label for="username" class="layui-form-label">
+                                    <span class="we-red">*</span>权限
+                                </label>
+                                <!-- <div class="layui-input-inline">
+                                    <select name="cateid" id="selectID">
+                                            <option value="">请选择角色</option>
+                                            <option value="超级管理员">超级管理员</option>
+                                            <option value="用户管理者">用户管理者</option>
+                                            <option value="戏剧学习管理者">戏剧学习管理者</option>
+                                            <option value="留言管理者">留言管理者</option>
+                                            <option value="管理员权限管理者">管理员权限管理者</option>
+                                            <option value="戏团管理者">戏团管理者</option>
+                                    </select>
+                                </div> -->
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="用户管理" value="1">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="看戏" value="2">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="唱戏" value="3">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="留言管理" value="4">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="发现" value="5">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="戏团管理" value="6">
+                                    <input type="checkbox" name="power"lay-skin="primary" title="管理员权限" value="7">
+                                    <input type="checkbox" name="power" lay-skin="primary" title="服务监控" value="8">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">
+                                        <span class="we-red">*</span>选中的部分表示您拥有的权限。
+                                    </div>
+                            </div>
+                      <div class="layui-form-item">
+                          <label for="L_pass" class="layui-form-label">
+                              <span class="we-red">*</span>密码
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                              autocomplete="off" class="layui-input" placeholder="请输入密码">
+                          </div>
+                          <div class="layui-form-mid layui-word-aux">
+                              6到16个字符
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="L_repass" class="layui-form-label">
+                              <span class="we-red">*</span>确认密码
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
+                              autocomplete="off" class="layui-input" placeholder="请再次输入密码">
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="L_repass" class="layui-form-label"></label>
+                          <button  class="layui-btn" lay-filter="add" lay-submit="">增加</button>
+                      </div>
+                  </form>
+                </div>
+        <script src="jquery.js" type="text/javascript" charset="utf-8"></script>        
+        <script src="../../lib/layui/layui.js" charset="utf-8"></script>
+        
+		<script>
+			layui.extend({
+				admin: '{/}../../static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 5) {
+							return '昵称至少得5个字符啊';
+						}
+                    },
+                    pass: [/(.+){6,12}$/, '密码必须6到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+					
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+                    var f = data.field;
+                    var arr = new Array();
+                    var admins = [];
+                    // console.log($(".layui-form-checked"));
+                    // console.log($('input[name="power"]:checked'));
+    	       $(".layui-form-checked").each(function(i,element){
+                //   arr[i]=$(this).prev().val();//将复选框中的val值插入数组
+                admins.push($(element).prev().val());//将复选框中的val值插入数组
+    	       });
+            //    console.log(arr);
+               console.log(admins);
+               var str = admins.join("#");
+               console.log(str);
+					//var sex = $('input:radio[name="sex"]:checked').val();
+                    //发异步，把数据提交给php
+                    $.ajax({
+                        // type:'post',
+                        type:'GET',
+                        url:'add.php',
+                        // data : data.field,
+                        data : { username:$("#username").val(), phone:$("#phone").val(), pass:$("#L_pass").val(), email:$("#L_email").val(), power:str},
+                        dataType:'JSON',
+                        success:function(Result){       
+							if(Result="200"){       
+							// parent.closeIframe(res.msg);
+							layer.alert("增加成功", {
+						icon: 6  //笑脸
+					}, function() {
+						//获取提交成功的时间
+						var time = new Date();
+						var timeNow = util.toDateString(time);
+						// 获得frame索引
+						var index = parent.layer.getFrameIndex(window.name);
+						//关闭当前frame
+						parent.layer.close(index);
+						window.parent.location.reload();
+					});
+                        }                
+                    else { 
+						layer.alert("增加失败", {
+						icon: 7 //感叹号
+					}, function() {
+						//获取提交成功的时间
+						var time = new Date();
+						var timeNow = util.toDateString(time);
+						// 获得frame索引
+						var index = parent.layer.getFrameIndex(window.name);
+						//关闭当前frame
+						parent.layer.close(index);
+					});
+					}
+                    }
+                    })
+					// layer.alert("增加成功", {
+					// 	icon: 6
+					// }, function() {
+					// 	//获取提交成功的时间
+					// 	var time = new Date();
+					// 	var timeNow = util.toDateString(time);
+					// 	// 获得frame索引
+					// 	var index = parent.layer.getFrameIndex(window.name);
+					// 	//关闭当前frame
+					// 	parent.layer.close(index);
+					// });
+					return false;
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

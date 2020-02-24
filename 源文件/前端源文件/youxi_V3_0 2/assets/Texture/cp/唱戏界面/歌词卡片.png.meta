@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "f011b184-a55b-41b8-9e73-e4ca6275137a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "歌词卡片": {
+      "ver": "1.0.4",
+      "uuid": "7f11ae03-e32f-4772-91b7-7824635655a3",
+      "rawTextureUuid": "f011b184-a55b-41b8-9e73-e4ca6275137a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 38,
+      "trimY": 38,
+      "width": 1544,
+      "height": 1936,
+      "rawWidth": 1620,
+      "rawHeight": 2012,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

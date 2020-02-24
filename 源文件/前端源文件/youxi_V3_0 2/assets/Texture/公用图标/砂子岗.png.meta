@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "312bc815-743e-4fc6-9c1e-60bb0d62291e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "砂子岗": {
+      "ver": "1.0.4",
+      "uuid": "c15bc11a-1e00-46ce-b6f8-cf0e47a82978",
+      "rawTextureUuid": "312bc815-743e-4fc6-9c1e-60bb0d62291e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 500,
+      "height": 310,
+      "rawWidth": 500,
+      "rawHeight": 310,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

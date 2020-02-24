@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "d268da43-979b-4383-8710-4e421f32d966",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "聊天室头像": {
+      "ver": "1.0.4",
+      "uuid": "f388b806-f0e5-403c-91e7-dfda65329f63",
+      "rawTextureUuid": "d268da43-979b-4383-8710-4e421f32d966",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 112,
+      "height": 112,
+      "rawWidth": 112,
+      "rawHeight": 112,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

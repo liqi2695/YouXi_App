@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查看戏团</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+    
+        
+            <div class="weadmin-body">
+                <div class="layui-form-item">
+                    <label for="username" class="layui-form-label">
+                        <span class="we-red">*</span>戏团名称
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="OperaName" name="OperaName" required="" lay-verify="required"
+                        autocomplete="off" class="layui-input" >
+                    </div>
+                    <!-- <div class="layui-form-mid layui-word-aux">
+                        <span class="we-red">*</span>开头不能为数字，至少为5个字符
+                    </div> -->
+                </div>
+                <div class="layui-form-item">
+                    <label for="phone" class="layui-form-label">
+                        <span class="we-red">*</span>戏团成员
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="OperaMember" name="OperaMember" required="" lay-verify="phone"
+                        autocomplete="off" class="layui-input" >
+                    </div>
+                    <!-- <div class="layui-form-mid layui-word-aux">
+                        <span class="we-red">*</span>输入的手机号码要能联系
+                    </div> -->
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_email" class="layui-form-label">
+                        <span class="we-red">*</span>戏团介绍
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="OperaIntroduction" name="OperaIntroduction" required="" lay-verify="email"
+                        autocomplete="off" class="layui-input" >
+                    </div>
+                    
+                </div>
+                <div class="layui-form-item">
+                  <label for="L_email" class="layui-form-label">
+                      <span class="we-red">*</span>成员介绍
+                  </label>
+                  <div class="layui-input-inline">
+                      <input type="text" id="MemberIntroduction" name="MemberIntroduction" required="" lay-verify="email"
+                      autocomplete="off" class="layui-input" >
+                  </div>
+                  
+              </div>
+              <div class="layui-form-item">
+                  <label for="phone" class="layui-form-label">
+                      <span class="we-red">*</span>电话
+                  </label>
+                  <div class="layui-input-inline">
+                      <input type="text" id="OperaPhoneNumber" name="OperaPhoneNumber" required="" lay-verify="phone"
+                      autocomplete="off" class="layui-input" >
+                  </div>
+                  <!-- <div class="layui-form-mid layui-word-aux">
+                      <span class="we-red">*</span>输入的手机号码要能联系
+                  </div> -->
+              </div>
+              <div class="layui-form-item">
+                  <label for="phone" class="layui-form-label">
+                      <span class="we-red">*</span>粉丝数
+                  </label>
+                  <div class="layui-input-inline">
+                      <input type="text" id="OperaFans" name="OperaFans" required="" lay-verify="phone"
+                      autocomplete="off" class="layui-input" >
+                  </div>
+                  <!-- <div class="layui-form-mid layui-word-aux">
+                      <span class="we-red">*</span>输入的手机号码要能联系
+                  </div> -->
+              </div>
+                      
+                      
+   
+                </div>
+                <script src="jquery.js" type="text/javascript" charset="utf-8"></script>       
+        <script src="../../lib/layui/layui.js" charset="utf-8"></script>
+        <script>
+       $.ajax({
+        type: 'get',
+        url: 'show.php',
+        success: function (data) {
+        var msg = JSON.parse(data);
+        // var Adminid = msg[0][0];
+        var OperaName=msg[0][1];
+        var OperaMember = msg[0][2];
+        var OperaIntroduction=msg[0][3];
+        var MemberIntroduction = msg[0][4];
+        var OperaPhoneNumber=msg[0][5];
+        var OperaFans=msg[0][6];
+        $('#OperaMember').val(OperaMember);
+        // $('#username').text(AdminNickName);
+        $('#OperaName').val(OperaName);
+        $('#OperaIntroduction').val(OperaIntroduction);
+        $('#MemberIntroduction').val(MemberIntroduction);
+        $('#OperaPhoneNumber').val(OperaPhoneNumber);
+        $('#OperaFans').val(OperaFans);
+        
+            }
+        });
+        
+        </script>
+	</body>
+
+</html>

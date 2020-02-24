@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查看用户</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+    
+        
+            <div class="weadmin-body">
+                      <div class="layui-form-item">
+                          <label for="username" class="layui-form-label">
+                              <span class="we-red">*</span>用户名
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="username" name="AdminNickName" class="layui-input">
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="phone" class="layui-form-label">
+                              <span class="we-red">*</span>手机
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="phone" name="phone" required="" lay-verify="phone"
+                              autocomplete="off" class="layui-input">
+                          </div>
+                         
+                      </div>
+                      <!-- <div class="layui-form-item">
+                          <label for="L_email" class="layui-form-label">
+                              <span class="we-red">*</span>邮箱
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="email" name="email" required="" lay-verify="email"
+                              autocomplete="off" class="layui-input">
+                          </div>
+                      </div> -->
+                      <!-- <div class="layui-form-item">
+                        <label for="L_repass" class="layui-form-label">
+                      <span class="we-red">*</span>密码
+                  </label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="pass" name="oldpass" required="" lay-verify="required" autocomplete="off" class="layui-input">
+                        </div>
+                    </div> -->
+                        <div class="layui-form-item">
+                                <label for="username" class="layui-form-label">
+                                    <span class="we-red">*</span>身份
+                                </label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="char" name="char" required="" lay-verify="email"
+                                    autocomplete="off" class="layui-input">
+                                </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="username" class="layui-form-label">
+                                <span class="we-red">*</span>加入时间
+                            </label>
+                            <div class="layui-input-inline">
+                                <input type="text" id="time" name="time" required="" lay-verify="email"
+                                autocomplete="off" class="layui-input">
+                            </div>
+                    </div>
+                      
+                      
+   
+                </div>
+                     
+        <script src="../../lib/layui/layui.js" charset="utf-8"></script>
+        <script src="jquery.js" type="text/javascript" charset="utf-8"></script>  
+        <script>
+       $.ajax({
+        type: 'get',
+        url: 'show.php',
+        // async:false,
+        // dataType:'JSON',
+        success: function (data) {
+        var msg = JSON.parse(data);
+        // console.log(msg);
+        // var Adminid = msg[0][0];
+        var AdminNickName=msg[0][1];
+        var AdminPhone = msg[0][2];
+        // var AdminPassword=msg[0][3];
+        var time = msg[0][4];
+        var Status=msg[0][5];
+        // var type=msg[0][6];
+        $('#username').val(AdminNickName);
+        // $('#username').text(AdminNickName);
+        $('#phone').val(AdminPhone);
+        // $('#email').val(AdminEmail);
+        // $('#pass').val(AdminPassword);
+        $('#char').val(Status);
+        $('#time').val(time);
+        
+            }
+        });
+        
+        </script>
+	</body>
+
+</html>

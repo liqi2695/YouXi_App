@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加戏团</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+            <div class="weadmin-body">
+                    <form class="layui-form" action="add.php" method="POST">
+                        <div class="layui-form-item">
+                            <label for="username" class="layui-form-label">
+                                <span class="we-red">*</span>戏团名称
+                            </label>
+                            <div class="layui-input-inline">
+                                <input type="text" id="OperaName" name="OperaName" required="" lay-verify="required"
+                                autocomplete="off" class="layui-input" placeholder="请输入戏团名称">
+                            </div>
+                            <!-- <div class="layui-form-mid layui-word-aux">
+                                <span class="we-red">*</span>开头不能为数字，至少为5个字符
+                            </div> -->
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="phone" class="layui-form-label">
+                                <span class="we-red">*</span>戏团成员
+                            </label>
+                            <div class="layui-input-inline">
+                                <input type="text" id="OperaMember" name="OperaMember" required="" lay-verify=""
+                                autocomplete="off" class="layui-input" placeholder="请输入戏团成员名字">
+                            </div>
+                            <!-- <div class="layui-form-mid layui-word-aux">
+                                <span class="we-red">*</span>输入的手机号码要能联系
+                            </div> -->
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="L_email" class="layui-form-label">
+                                <span class="we-red">*</span>戏团介绍
+                            </label>
+                            <div class="layui-input-inline">
+                                <input type="text" id="OperaIntroduction" name="OperaIntroduction" required="" lay-verify=""
+                                autocomplete="off" class="layui-input" placeholder="请输入戏团介绍">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">
+                                <span class="we-red">*</span>要求简洁明了
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                          <label for="L_email" class="layui-form-label">
+                              <span class="we-red">*</span>成员介绍
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="MemberIntroduction" name="MemberIntroduction" required="" lay-verify=""
+                              autocomplete="off" class="layui-input" placeholder="请输入戏团成员介绍">
+                          </div>
+                          <div class="layui-form-mid layui-word-aux">
+                              <span class="we-red">*</span>要求简洁明了
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="phone" class="layui-form-label">
+                              <span class="we-red">*</span>电话
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="OperaPhoneNumber" name="OperaPhoneNumber" required="" lay-verify="phone"
+                              autocomplete="off" class="layui-input" placeholder="请输入戏团电话">
+                          </div>
+                          <!-- <div class="layui-form-mid layui-word-aux">
+                              <span class="we-red">*</span>输入的手机号码要能联系
+                          </div> -->
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="phone" class="layui-form-label">
+                              <span class="we-red">*</span>粉丝数
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="OperaFans" name="OperaFans" required="" lay-verify=""
+                              autocomplete="off" class="layui-input" placeholder="请输入该戏团的粉丝数量">
+                          </div>
+                          <div class="layui-form-mid layui-word-aux">
+                              <span class="we-red">*</span>粉丝数量不能为0
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label for="L_repass" class="layui-form-label"></label>
+                          <button  class="layui-btn" lay-filter="add" lay-submit="">增加</button>
+                      </div>
+                  </form>
+                </div>
+		<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}../../static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+
+				//自定义验证规则
+				// form.verify({
+				// 	nikename: function(value) {
+				// 		if(value.length < 5) {
+				// 			return '昵称至少得5个字符啊';
+				// 		}
+				// 	},
+				// 	pass: [/(.+){6,12}$/, '密码必须6到12位'],
+				// 	repass: function(value) {
+				// 		if($('#L_pass').val() != $('#L_repass').val()) {
+				// 			return '两次密码不一致';
+				// 		}
+				// 	}
+				// });
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				// $('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+				// 	if($('input[name="email"]').val()){
+				// 		$('input[name="email"]').attr('lay-verify','email');
+				// 	}else{
+				// 		$('input[name="email"]').removeAttr('lay-verify');
+				// 	}
+				// });
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+					//console.log(data.field);
+					var f = data.field;
+					//console.log(f.username);
+					//console.log(f.sex);				
+					//var sex = $('input:radio[name="sex"]:checked').val();
+                    //发异步，把数据提交给php
+                    $.ajax({
+                        type:'post',
+                        url:'add.php',
+                        data : data.field,
+                        dataType:'JSON',
+                        success:function(Result){       
+							if(Result="200"){       
+							// parent.closeIframe(res.msg);
+							layer.alert("增加成功", {
+						icon: 6  //笑脸
+					}, function() {
+						//获取提交成功的时间
+						var time = new Date();
+						var timeNow = util.toDateString(time);
+						// 获得frame索引
+						var index = parent.layer.getFrameIndex(window.name);
+						//关闭当前frame
+						parent.layer.close(index);
+						window.parent.location.reload();
+					});
+                        }                
+                    else { 
+						layer.alert("增加失败", {
+						icon: 7 //感叹号
+					}, function() {
+						//获取提交成功的时间
+						var time = new Date();
+						var timeNow = util.toDateString(time);
+						// 获得frame索引
+						var index = parent.layer.getFrameIndex(window.name);
+						//关闭当前frame
+						parent.layer.close(index);
+					});
+					}
+                    }
+                    })
+					// layer.alert("增加成功", {
+					// 	icon: 6
+					// }, function() {
+					// 	//获取提交成功的时间
+					// 	var time = new Date();
+					// 	var timeNow = util.toDateString(time);
+					// 	// 获得frame索引
+					// 	var index = parent.layer.getFrameIndex(window.name);
+					// 	//关闭当前frame
+					// 	parent.layer.close(index);
+					// });
+					return false;
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

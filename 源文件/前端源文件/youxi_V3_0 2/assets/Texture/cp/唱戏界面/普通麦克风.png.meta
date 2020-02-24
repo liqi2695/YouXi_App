@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "639e03fa-61c4-41a6-a98a-eeb3b790c997",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "普通麦克风": {
+      "ver": "1.0.4",
+      "uuid": "ad272f3d-0e93-4261-8d10-5e9663209f31",
+      "rawTextureUuid": "639e03fa-61c4-41a6-a98a-eeb3b790c997",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 13,
+      "trimY": 13,
+      "width": 354,
+      "height": 354,
+      "rawWidth": 380,
+      "rawHeight": 380,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

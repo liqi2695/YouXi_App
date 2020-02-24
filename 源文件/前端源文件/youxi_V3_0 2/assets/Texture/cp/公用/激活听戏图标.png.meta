@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "56b1fdfe-46b3-4dd9-9162-ebca8ae8eb17",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "激活听戏图标": {
+      "ver": "1.0.4",
+      "uuid": "03e90833-298b-44a7-88de-0d5ec8ced1d1",
+      "rawTextureUuid": "56b1fdfe-46b3-4dd9-9162-ebca8ae8eb17",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 81,
+      "height": 72,
+      "rawWidth": 81,
+      "rawHeight": 72,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

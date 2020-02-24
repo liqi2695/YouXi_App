@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "46e0f41c-3b68-4d5f-b2ae-5a8994bf65fa",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "普通唱戏图标": {
+      "ver": "1.0.4",
+      "uuid": "b66fd05c-4bc8-40b5-844d-2f685d21aab1",
+      "rawTextureUuid": "46e0f41c-3b68-4d5f-b2ae-5a8994bf65fa",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 72,
+      "height": 72,
+      "rawWidth": 72,
+      "rawHeight": 72,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

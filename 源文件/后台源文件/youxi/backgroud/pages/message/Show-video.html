@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查看留言资料</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+    
+        
+            <div class="weadmin-body">
+                      <div class="layui-form-item">
+                          <label for="username" class="layui-form-label">
+                              <span class="we-red">*</span>用户名
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="PersonalNickName" name="AdminNickName" class="layui-input">
+                          </div>
+                      </div>
+                      <!-- <div class="layui-form-item">
+                          <label for="phone" class="layui-form-label">
+                              <span class="we-red">*</span>手机号码
+                          </label>
+                          <div class="layui-input-inline">
+                              
+                                    <input type="text" id="PersonalPhone" name="phone" required="" lay-verify="phone"
+                                    autocomplete="off" class="layui-input">
+                              
+                          </div>
+                         
+                      </div> -->
+                      <!-- <div class="layui-form-item">
+                          <label for="L_email" class="layui-form-label">
+                              <span class="we-red">*</span>地址
+                          </label>
+                          <div class="layui-input-inline">
+                              <input type="text" id="Position" name="email" required="" lay-verify="email"
+                              autocomplete="off" class="layui-input">
+                          </div>
+                      </div> -->
+                      <div class="layui-form-item">
+                        <label for="L_email" class="layui-form-label">
+                            <span class="we-red">*</span>评论内容
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="Comment" name="email" required="" lay-verify="email"
+                            autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                      <!-- <div class="layui-form-item">
+                        <label for="L_repass" class="layui-form-label">
+                      <span class="we-red">*</span>高清图片链接
+                  </label>
+                  <div class="layui-input-inline">
+                    <a href="" id="RandomPictureUrl">
+                          <input type="text" id="L-RandomPictureUrl" name="phone" required="" lay-verify="phone"
+                          autocomplete="off" class="layui-input">
+                    </a>
+                </div>
+                    </div> -->
+                        <!-- <div class="layui-form-item">
+                                <label for="username" class="layui-form-label">
+                                    <span class="we-red">*</span>音频地址
+                                </label>
+                                <div class="layui-input-inline">
+                                    <a href="" id="AudioUrl">
+                                          <input type="text" id="L-AudioUrl" name="phone" required="" lay-verify="phone"
+                                          autocomplete="off" class="layui-input">
+                                    </a>
+                                </div>
+                        </div> -->
+                        <div class="layui-form-item">
+                            <label for="username" class="layui-form-label">
+                                <span class="we-red">*</span>视频地址
+                            </label>
+                            <div class="layui-input-inline">
+                                <a href="" id="VideoUrl">
+                                      <input type="text" id="L-VideoUrl" name="phone" required="" lay-verify="phone"
+                                      autocomplete="off" class="layui-input">
+                                </a>
+                            </div>
+                    </div>
+                        <div class="layui-form-item">
+                            <label for="username" class="layui-form-label">
+                                <span class="we-red">*</span>评论时间
+                            </label>
+                            <div class="layui-input-inline">
+                                <input type="text" id="CommentTime" name="time" required="" lay-verify="email"
+                                autocomplete="off" class="layui-input">
+                            </div>
+                    </div>
+                   
+                      
+                      
+   
+                </div>
+                <script src="jquery.js" type="text/javascript" charset="utf-8"></script>       
+        <script src="../../lib/layui/layui.js" charset="utf-8"></script>
+        <script>
+       $.ajax({
+        type: 'get',
+        url: 'show.php',
+        success: function (data) {
+        var msg = JSON.parse(data);
+        // var Adminid = msg[0][0];
+        var PersonalNickName=msg[0][1];
+        // var PersonalPhone = msg[0][2];
+        var Comment=msg[0][3];
+        var CommentTime = msg[0][4];
+        // var AudioUrl = msg[0][5];
+        var LongVideoUrl = msg[0][6];
+        // var RandomPictureUrl = msg[0][7];
+        // var AudioUrl = msg[0][8];
+        // var PriseNumber = msg[0][9];
+        
+        $('#PersonalNickName').val(PersonalNickName);
+        // $('#PersonalPhone').val(PersonalPhone);
+       $('#Comment').val(Comment);
+       $('#CommentTime').val(CommentTime);
+    // $("#RandomPictureUrl").attr({
+    //     "href" : RandomPictureUrl
+    // });
+    //     $('#L-RandomPictureUrl').val(RandomPictureUrl);
+    //     $("#AudioUrl").attr({
+    //     "href" : AudioUrl
+    // });
+    //     $('#L-AudioUrl').val(AudioUrl);
+        $("#VideoUrl").attr({
+        "href" : LongVideoUrl
+    });
+        $('#L-VideoUrl').val(LongVideoUrl);
+        // $('#PriseNumber').val(PriseNumber);
+        // $('#Time').val(Time);
+        
+            }
+        });
+        
+        </script>
+	</body>
+
+</html>

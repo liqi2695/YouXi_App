@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>戏团恢复</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-nav">
+			<span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">戏团管理</a>
+        <a>
+          <cite>戏团恢复</cite></a>
+      </span>
+			<a class="layui-btn layui-btn-sm" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+				<i class="layui-icon" style="line-height:30px">ဂ</i></a>
+		</div>
+		<div class="weadmin-body">
+			<div class="layui-row">
+				<form class="layui-form layui-col-md12 we-search">
+						戏团搜索：
+					<div class="layui-inline">
+						<input class="layui-input" placeholder="请输入戏团名称" name="call" id="call">
+					</div>
+					<!-- <div class="layui-inline">
+						<input class="layui-input" placeholder="截止日" name="end" id="end">
+					</div> -->
+					<div class="layui-inline">
+						<input type="text" name="username" placeholder="请输入戏团成员名字" autocomplete="off" class="layui-input" id="user">
+					</div>
+					<button class="layui-btn" lay-submit="" lay-filter="sreach" id="search" data-type="reload"><i class="layui-icon">&#xe615;</i></button>
+				</form>
+			</div>
+			<div class="weadmin-block demoTable">
+				<!-- 要加上demoTable，按钮点击才有反应 -->
+					<button class="layui-btn layui-btn-danger" data-type="getCheckData"><i class="layui-icon">&#xe640;</i>批量恢复</button>
+                    <span class="fr" style="line-height:40px">共有数据：88 条</span>
+			</div>
+			<table class="layui-table" id="adminList" lay-filter="testReload">
+				
+            </table>
+            <script type="text/html" id="recommendTpl">
+                <span class="layui-btn layui-btn-danger layui-btn-xs">
+					已删除
+				</span>
+            </script>
+            <script type="text/html" id="operateTpl">
+                <!-- <a onclick="member_stop(this,'10001')" href="javascript:;" title="启用">
+                    <i class="layui-icon">&#xe601;</i>
+				</a> -->
+				<!-- <a onclick="WeAdminShow('修改密码','./password.html',600,400)" title="修改密码" href="javascript:;">
+					<i class="layui-icon layui-icon-util"></i>
+				</a> -->
+				<a title="恢复" onclick="member_recover(this,'要恢复的id')">
+					<i class="layui-icon layui-icon-list"></i>
+				</a>
+				<!-- <a title="查看" onclick="WeAdminShow('查看文章','./show.html',600,400)" href="javascript:;">
+					<i class="layui-icon">&#xe63c;</i>
+				</a> -->
+				<a title="删除" onclick="member_del(this,'要删除的id')" >
+					<i class="layui-icon">&#xe640;</i>
+				</a>
+			</script>
+			
+        </div>
+        <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+    	<script src="recover.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

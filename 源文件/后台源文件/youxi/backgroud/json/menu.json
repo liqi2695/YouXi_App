@@ -1,0 +1,135 @@
+{
+	"status": 0,
+	"msg": "ok",
+	"data": [{
+			"id": 1,
+			"name": "用户管理",
+			"icon": "&#xe6b8;",
+			"url": "",
+			"children": [{
+				"id": 101,
+				"name": "用户列表",
+				"icon": "",
+				"url": "./pages/user/user.html"
+			}, {
+				"id": 102,
+				"name": "用户恢复",
+				"icon": "",
+				"url": "./pages/user/del.html"
+			}]
+		},{
+            "id": 2,
+			"name": "看戏",
+			"icon": "&#xe705;",
+			"url": "",
+			"children": [{
+				"id": 201,
+				"name": "视频列表",
+				"icon": "",
+				"url": "./pages/video/longvideo.html"
+			},
+			{   "id": 202,
+				"name": "视频恢复",
+				"icon": "",
+				"url": "./pages/video/del-longvideo.html"
+			}]
+		},{
+			"id": 3,
+			"name": "唱戏",
+			"icon": "&#xe707;",
+			"url": "",
+			"children": [{
+				"id": 301,
+				"name": "视频列表",
+				"icon": "",
+				"url": "./pages/video/video.html"
+			},
+			{   "id": 302,
+				"name": "视频恢复",
+				"icon": "",
+				"url": "./pages/video/delvideo.html"
+			}]
+		},{
+			"id": 4,
+			"name": "留言管理",
+			"icon": "&#xe723;",
+			"url": "",
+			"children": [{
+				"id": 401,
+				"name": "发现中的音频留言",
+				"icon": "",
+				"url": "./pages/message/message.html"
+			},
+			{   "id": 402,
+				"name": "看戏中的视频留言",
+				"icon": "",
+				"url": "./pages/message/Message-video.html"
+			},
+			{   "id": 403,
+				"name": "留言恢复",
+				"icon": "",
+				"url": "./pages/message/recover.html"
+			}]
+		},
+		{
+			"id": 5,
+			"name": "发现",
+			"icon": "&#xe722;",
+			"url": "",
+			"children": [{
+				"id": 501,
+				"name": "音频列表",
+				"icon": "",
+				"url": "./pages/audio/audio.html"
+			},
+			{   "id": 502,
+				"name": "音频恢复",
+				"icon": "",
+				"url": "./pages/audio/del.html"
+			}]
+		},
+		{
+			"id": 6,
+			"name": "戏团管理",
+			"icon": "&#xe713;",
+			"url": "",
+			"children": [{
+				"id": 601,
+				"name": "戏团列表",
+				"icon": "",
+				"url": "./pages/theater/theater.html"
+			},
+			{   "id": 602,
+				"name": "戏团恢复",
+				"icon": "",
+				"url": "./pages/theater/recover.html"
+			}]
+		},
+		{
+			"id": 7,
+			"name": "管理员权限",
+			"icon": "&#xe726;",
+			"url": "",
+			"children": [{
+				"id": 701,
+				"name": "管理员列表",
+				"icon": "",
+				"url": "./pages/myadmin/admin.html"
+			},
+			{
+				"id": 702,
+				"name": "管理员恢复",
+				"icon": "",
+				"url": "./pages/myadmin/del.html"
+			}
+		]
+		},
+		{
+			"id": 8,
+			"name": "服务监控",
+			"icon": "&#xe736;",
+			"url": "./pages/sever/sever.html"
+		}
+		
+	]
+}

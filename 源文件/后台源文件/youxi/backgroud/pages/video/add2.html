@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加视频</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../static/css/font.css">
+		<link rel="stylesheet" href="../../static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<form class="layui-form" action="insert-shortvideo.php">
+				<div class="layui-form-item">
+                    <label for="L_videotitle" class="layui-form-label">
+                        <span class="we-red">*</span>视频标题
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="L_videotitle" name="videotitle" lay-verify="" autocomplete="off" class="layui-input" placeholder="请输入学习戏剧的视频标题">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">
+                        例：天仙配
+                    </div>
+				</div>
+				<div class="layui-form-item">
+                    <label for="L_videourl" class="layui-form-label">
+                        <span class="we-red">*</span>视频地址
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="L_videourl" name="videourl" lay-verify="" autocomplete="off" class="layui-input" placeholder="请输入该视频的地址">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">
+                        该戏剧视频的地址。例：https://youxi-data.oss-cn-shanghai.aliyuncs.com/videos%26%26lrc/%E3%80%8A%E5%8D%96%E6%9D%82%E8%B4%A7%E3%80%8B%E9%80%89%E6%AE%B5-%E5%A4%A7%E5%AB%82%E5%A4%A7%E5%A7%90%E8%8E%AB%E8%A6%81%E6%85%8C.mp4
+                    </div>
+				</div>
+				<div class="layui-form-item">
+                    <label for="L_videolrcurl" class="layui-form-label">
+                        <span class="we-red">*</span>戏词
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="L_videolrcurl" name="videolrcurl" lay-verify="" autocomplete="off" class="layui-input" placeholder="请输入该戏剧视频所对应的戏词地址">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">
+                        戏词
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_videolrcurl" class="layui-form-label">
+                        <span class="we-red">*</span>视频图片地址
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="L_videolrcurl" name="videopicurl" lay-verify="" autocomplete="off" class="layui-input" placeholder="请输入该戏剧视频所对应的图片地址">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">
+                        与戏剧视频所对应的海报、角色图片皆可以。例如：http://youxi-data.oss-cn-shanghai.aliyuncs.com/video_pic/1.png
+                    </div>
+                </div>
+                <!-- <div class="layui-form-item">
+                    <label for="username" class="layui-form-label">
+                        <span class="we-red">*</span>视频分类
+                    </label>
+                    <div class="layui-input-inline">
+                        <select name="cateid" id="selectID">
+                            <option value="">请选择分类</option>
+                            <option value="d">学习视频</option>
+                            <option value="c">历史视频</option>
+                        </select>
+                    </div>
+                </div> -->
+				<div class="layui-form-item">
+					<label for="L_repass" class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+			</form>
+		</div>
+		<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}../../static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+
+				//自定义验证规则
+				// form.verify({
+				// 	nikename: function(value) {
+				// 		if(value.length < 5) {
+				// 			return '昵称至少得5个字符啊';
+				// 		}
+				// 	},
+				// 	pass: [/(.+){6,12}$/, '密码必须6到12位'],
+				// 	repass: function(value) {
+				// 		if($('#L_pass').val() != $('#L_repass').val()) {
+				// 			return '两次密码不一致';
+				// 		}
+				// 	}
+				// });
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				// $('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+				// 	if($('input[name="email"]').val()){
+				// 		$('input[name="email"]').attr('lay-verify','email');
+				// 	}else{
+				// 		$('input[name="email"]').removeAttr('lay-verify');
+				// 	}
+				// });
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+					//console.log(data.field);
+					var f = data.field;
+					//console.log(f.username);
+					//console.log(f.sex);				
+					//var sex = $('input:radio[name="sex"]:checked').val();
+                    //发异步，把数据提交给php
+                    $.ajax({
+                        type:'post',
+                        url:'insert-shortvideo.php',
+                        data : data.field,
+                        dataType:'JSON',
+                        success:function(Result){       
+							if(Result="200"){       
+							// parent.closeIframe(res.msg);
+							layer.alert("增加成功", {
+						icon: 6  //笑脸
+					}, function() {
+						//获取提交成功的时间
+						var time = new Date();
+						var timeNow = util.toDateString(time);
+						// 获得frame索引
+						var index = parent.layer.getFrameIndex(window.name);
+						//关闭当前frame
+						parent.layer.close(index);
+						window.parent.location.reload();
+					});
+                        }                
+                    else { 
+						layer.alert("增加失败", {
+						icon: 7 //感叹号
+					}, function() {
+						//获取提交成功的时间
+						var time = new Date();
+						var timeNow = util.toDateString(time);
+						// 获得frame索引
+						var index = parent.layer.getFrameIndex(window.name);
+						//关闭当前frame
+						parent.layer.close(index);
+					});
+					}
+                    }
+                    })
+					// layer.alert("增加成功", {
+					// 	icon: 6
+					// }, function() {
+					// 	//获取提交成功的时间
+					// 	var time = new Date();
+					// 	var timeNow = util.toDateString(time);
+					// 	// 获得frame索引
+					// 	var index = parent.layer.getFrameIndex(window.name);
+					// 	//关闭当前frame
+					// 	parent.layer.close(index);
+					// });
+					return false;
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

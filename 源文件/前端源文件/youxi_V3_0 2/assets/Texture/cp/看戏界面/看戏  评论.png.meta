@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "8a0fab40-4cd9-4511-8b1d-6b24c3a2c3c7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "看戏  评论": {
+      "ver": "1.0.4",
+      "uuid": "60dd3706-cf34-4248-a4d6-027c5210fbc1",
+      "rawTextureUuid": "8a0fab40-4cd9-4511-8b1d-6b24c3a2c3c7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 4320,
+      "height": 7680,
+      "rawWidth": 4320,
+      "rawHeight": 7680,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

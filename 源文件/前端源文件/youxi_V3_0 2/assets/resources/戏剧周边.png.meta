@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "0a631292-5a94-4267-bbf8-a07c00a6ddab",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "戏剧周边": {
+      "ver": "1.0.4",
+      "uuid": "aab9b4a5-51fd-4244-b074-89d70eff80ad",
+      "rawTextureUuid": "0a631292-5a94-4267-bbf8-a07c00a6ddab",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": -0.5,
+      "trimX": 3,
+      "trimY": 17,
+      "width": 283,
+      "height": 67,
+      "rawWidth": 292,
+      "rawHeight": 100,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

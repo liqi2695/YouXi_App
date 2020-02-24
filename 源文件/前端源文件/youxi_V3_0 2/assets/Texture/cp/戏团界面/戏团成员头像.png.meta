@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.1",
+  "uuid": "e4a251d2-a0bf-46fb-85e1-69ec5009f855",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "戏团成员头像": {
+      "ver": "1.0.4",
+      "uuid": "8e2df022-ea04-4514-8905-9b9d3f5b1424",
+      "rawTextureUuid": "e4a251d2-a0bf-46fb-85e1-69ec5009f855",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 160,
+      "height": 160,
+      "rawWidth": 160,
+      "rawHeight": 160,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
