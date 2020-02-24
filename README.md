@@ -15,9 +15,9 @@
 	本产品我们采用mysql数据库。
 #### 4.云存储服务器
   为了让提高使用体验，使得加载更加迅速我们采用的是阿里云OSS对象云储存 ，这样可以大大提高音频的访问效率，并同时减轻自身服务器的流量压力。
-[!Alt text](https://github.com/liqi2695/YouXi_App/blob/master/ScreenShots/%E5%9B%BE%E7%89%872.png)
+![Alt text](https://github.com/liqi2695/YouXi_App/blob/master/ScreenShots/%E5%9B%BE%E7%89%872.png)
 
 
 
 ### 开发流程
-[!Alt text](https://github.com/liqi2695/YouXi_App/blob/master/ScreenShots/%E5%9B%BE%E7%89%873.png)
+![Alt text](https://github.com/liqi2695/YouXi_App/blob/master/ScreenShots/%E5%9B%BE%E7%89%873.png)
